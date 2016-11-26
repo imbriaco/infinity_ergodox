@@ -1,3 +1,6 @@
+# Keymap to use
+KEYMAP=imbriaco
+
 # Target file name (without extension).
 PROJECT = ch
 
@@ -17,7 +20,7 @@ CHIBIOS_CONTRIB = chibios_contrib
 SRC =	matrix.c \
 	keymap_common.c \
 	led.c \
-	user_hooks.c 
+	user_hooks.c
 
 ifdef KEYMAP
     SRC := keymap_$(KEYMAP).c $(SRC)
@@ -98,7 +101,7 @@ else
 # These options are incompatible with the visualizer
 STATUS_LED_ENABLE = yes # Enable CAPS LOCK display for the LCD screen
 endif
-MASTER = left
+MASTER = right
 
 
 ifdef LCD_ENABLE
@@ -113,9 +116,9 @@ ifdef VISUALIZER_ENABLE
 include $(VISUALIZER_DIR)/visualizer.mk
 endif
 
-ifeq ($(MASTER),right)	
+ifeq ($(MASTER),right)
 OPT_DEFS += -DMASTER_IS_ON_RIGHT
-else 
+else
 ifneq ($(MASTER),left)
 $(error MASTER does not have a valid value(left/right))
 endif
