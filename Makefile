@@ -101,7 +101,7 @@ else
 # These options are incompatible with the visualizer
 STATUS_LED_ENABLE = yes # Enable CAPS LOCK display for the LCD screen
 endif
-MASTER = right
+MASTER = left
 
 
 ifdef LCD_ENABLE
